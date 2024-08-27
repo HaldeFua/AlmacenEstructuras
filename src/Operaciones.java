@@ -1,16 +1,19 @@
 import java.util.Scanner;
 
-public class FiltroPorNombre {
+// Clase que contiene un operaciones para trabjar con los datos de una matriz
+public class Operaciones {
 
     String nombreABuscar;
     Producto [][] matrizProducto;
     int fila;
     int columna;
 
-    public FiltroPorNombre(Producto[][] matrizProducto) {
+    //metodo contrusctor, para construir un objetivo de clase Operaciones se debe ingresar siempre la matriz objetual
+    public Operaciones(Producto[][] matrizProducto) {
         this.matrizProducto = matrizProducto;
     }
 
+    // Metodo para buscar, con un nombre, en la matriz objetual, su posición en la matriz
     public void filaYColumna(){
 
         Scanner scan = new Scanner(System.in);
@@ -29,7 +32,24 @@ public class FiltroPorNombre {
         }
 
         System.out.println("El producto " + nombreABuscar + " está en la fila " + fila + " y columna " + columna);
+    }
+
+    //Cancula la cantidad total de productos que hay
+    public void totalInventario(){
+
+        int totalInventario = 0;
+
+        for (int i = 0; i < matrizProducto.length; i++) {
+            for (int j = 0; j < matrizProducto[i].length; j++) {
+
+                totalInventario += matrizProducto[i][j].getCantida();
+
+            }
+        }
+
+        System.out.println("El total de productos es " + totalInventario);
 
     }
+
 
 }

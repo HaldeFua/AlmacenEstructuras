@@ -3,9 +3,15 @@ public class Main {
 
         Almacen almacen = new Almacen();
 
-        FiltroPorNombre filtro = new FiltroPorNombre(almacen.getMatrizProductos());
+        Operaciones filtro = new Operaciones(almacen.getMatrizProductos());
 
-        filtro.filaYColumna();
+        //filtro.filaYColumna();
+        //filtro.totalInventario();
+
+        AlmacenLibros libros = new AlmacenLibros();
+        OperacionesLibros opL = new OperacionesLibros(libros.getMatrizLibros());
+
+        opL.precioMasCaro();
 
     }
 }
